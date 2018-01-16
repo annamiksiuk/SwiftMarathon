@@ -9,27 +9,28 @@ if let number1 = Int(text1) {
     print("value text1 is not Int\n")
 }
 
-let number2 : Int? = Int(text2)
+let number2 = Int(text2)
 if number2 != nil {
     summa = summa + number2!
 } else {
     print("value text2 is not Int\n")
 }
 
-if Int(text3) != nil {
-    let number3 = Int(text3)
+let number3 = Int(text3)
+if number3 != nil {
     summa += number3!
 } else {
     print("value text3 is not Int\n")
 }
 
-if Int(text4) != nil {
-    summa += Int(text4)!
+let number4 = Int(text4)
+if number4 != nil {
+    summa += number4!
 } else {
     print("value text4 is not Int\n")
 }
 
-let number5 : Int? = Int(text5)
+let number5 = Int(text5)
 if number5 != nil {
     summa = summa + number5!
 } else {
@@ -50,7 +51,8 @@ if response1.statusCode >= 200 && response1.statusCode <= 300 {
     
     print(response1.error)
 }
-let errorMessage : String? = nil
+
+var errorMessage : String?
 let error : String? = "error"
 
 let response2 = (error: error, errorMessage: errorMessage)
@@ -63,15 +65,12 @@ if response2.errorMessage != nil {
 }
 
 //-----------------------------------
-var name : String? = nil
-var numberCar : String? = nil
-var score: Float? = nil
 
-var student1 = (name: name, numberCar: numberCar, score: score)
-var student2 = (name: name, numberCar: numberCar, score: score)
-var student3 = (name: name, numberCar: numberCar, score: score)
-var student4 = (name: name, numberCar: numberCar, score: score)
-var student5 = (name: name, numberCar: numberCar, score: score)
+var student1 : (name: String?, numberCar: String?, score: Float?)
+var student2 : (name: String?, numberCar: String?, score: Float?)
+var student3 : (name: String?, numberCar: String?, score: Float?)
+var student4 : (name: String?, numberCar: String?, score: Float?)
+var student5 : (name: String?, numberCar: String?, score: Float?)
 
 student1.name = "Anna"
 student2.name = "Ivan"
