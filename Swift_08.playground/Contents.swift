@@ -63,8 +63,8 @@ print("------------------")
 let letters = ["a", "b", "c", "d", "e", "f", "g", "h"]
 var grid = [String : Bool]()
 
-for var indexLetter in 0..<letters.count {
-    for var number in 1...8 {
+for indexLetter in 0..<letters.count {
+    for number in 1...8 {
         
         let letter = letters[indexLetter]
         let nameCell = letter + String(number)
