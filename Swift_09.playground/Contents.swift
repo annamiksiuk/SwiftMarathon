@@ -49,30 +49,20 @@ switch age {
 }
 print("------------------------------")
 
-let firstName = "Иван"
-let patronymic = "Иванович"
-let lastName = "Зумов"
+let name = (firstName : "Иван", patronymic: "Иванович", lastName : "Зумов")
 
 var phrase = String()
 
-switch firstName {
-    case let name where name.hasPrefix("А") || name.hasPrefix("О") :
-        phrase = firstName
-    default:
-        switch patronymic {
-            case let dad where dad.hasPrefix("В") || dad.hasPrefix("Д"):
-                phrase = firstName + " " + patronymic
-            default:
-                switch lastName {
-                case let family where family.hasPrefix("Е") || family.hasPrefix("З"):
-                    phrase = lastName
-                default:
-                    phrase = firstName + " " + patronymic + " " + lastName
-                    break
-                }
-                break
-        }
-        break
+switch name {
+case let (firstName, _, _) where firstName.hasPrefix("А") || firstName.hasPrefix("О") :
+    phrase = firstName
+case let (_, patronymic, _) where patronymic.hasPrefix("В") || patronymic.hasPrefix("Д"):
+    phrase = name.firstName + " " + patronymic
+case let (_, _, lastName) where lastName.hasPrefix("Е") || lastName.hasPrefix("З"):
+    phrase = lastName
+default:
+    phrase = name.firstName + " " + name.patronymic + " " + name.lastName
+    break
 }
 
 print(phrase)
